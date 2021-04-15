@@ -1,0 +1,13 @@
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Priority_Schedular\bin\Debug\netcoreapp3.1\Priority_Schedular.exe
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Priority_Schedular\bin\Debug\netcoreapp3.1\Priority_Schedular.deps.json
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Priority_Schedular\bin\Debug\netcoreapp3.1\Priority_Schedular.runtimeconfig.json
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Priority_Schedular\bin\Debug\netcoreapp3.1\Priority_Schedular.runtimeconfig.dev.json
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Priority_Schedular\bin\Debug\netcoreapp3.1\Priority_Schedular.dll
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Priority_Schedular\bin\Debug\netcoreapp3.1\Priority_Schedular.pdb
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Priority_Schedular\obj\Debug\netcoreapp3.1\Priority_Schedular.csprojAssemblyReference.cache
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Priority_Schedular\obj\Debug\netcoreapp3.1\Priority_Schedular.AssemblyInfoInputs.cache
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Priority_Schedular\obj\Debug\netcoreapp3.1\Priority_Schedular.AssemblyInfo.cs
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Priority_Schedular\obj\Debug\netcoreapp3.1\Priority_Schedular.csproj.CoreCompileInputs.cache
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Priority_Schedular\obj\Debug\netcoreapp3.1\Priority_Schedular.dll
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Priority_Schedular\obj\Debug\netcoreapp3.1\Priority_Schedular.pdb
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Priority_Schedular\obj\Debug\netcoreapp3.1\Priority_Schedular.genruntimeconfig.cache
