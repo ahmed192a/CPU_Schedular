@@ -10,7 +10,7 @@ namespace Priority_Schedular
         public int start_time;         // the start time of the process
         public int duration;           // time for the process to finish
         public int num ;                // number of the process
-        public bool started;
+        public int started;
     };
 
 
@@ -24,13 +24,23 @@ namespace Priority_Schedular
 
         static void pl(process p)
         {
-            if(list.Count == 0)
+            LinkedListNode<process> i;
+            if (list.Count == 0)
+            {
+                list.AddLast(p);
+            }
+            else if(p.start_time < list.First.Value.start_time)
             {
                 list.AddFirst(p);
             }
+            else if(p.start_time >= list.Last.Value.start_time)
+            {
+                list.AddLast(p);
+            }
             else
             {
-                var i = list.Last;
+                i = list.Last;
+                
                 while(i.Value.start_time > p.start_time)
                 {
                     i = i.Previous;
@@ -38,11 +48,53 @@ namespace Priority_Schedular
                 list.AddAfter(i, p); 
             }
         }
+
+        //*******************************************
         static void RQ(process p)
         {
             if (queue.Count == 0)
             {
                 queue.AddFirst(p);
+            }
+            else if (queue.Count == 1)
+            {
+                if ((preemptive || queue.First.Value.started == 0) && p.priority < queue.First.Value.priority)
+                {
+                    queue.AddFirst(p);
+                }
+                else
+                    queue.AddLast(p);
+            }
+            else if(p.priority > queue.Last.Value.priority)
+            {
+                queue.AddLast(p);
+            }
+            else
+            {
+                LinkedListNode<process> i = preemptive? queue.First : queue.First.Next;
+
+                while(i.Value.priority <= p.priority)
+                {
+                    i = i.Next;
+                }
+                queue.AddBefore(i, p);
+
+            }
+            /*
+            if(queue.Count == 1 && !preemptive)
+            {
+                queue.AddLast(p);
+            }
+            else if( p.priority >= queue.Last.Value.priority)
+            {
+                queue.AddLast(p);
+            }
+            else if(p.priority < queue.First.Value.priority)
+            {
+                if (preemptive)
+                    queue.AddFirst(p);
+                
+                   
             }
             else if (p.priority > 5/2)
             {
@@ -51,6 +103,7 @@ namespace Priority_Schedular
                 {
                     i = i.Next;
                 }
+                
 
                 while(i.Value.priority >= p.priority)
                 {
@@ -61,13 +114,14 @@ namespace Priority_Schedular
             }
             else
             {
-                var i = queue.Last;
+                LinkedListNode<process> i = queue.Last;
                 while(i.Value.priority < p.priority)
                 {
                     i = i.Previous;
                 }
                 queue.AddAfter(i, p);
             }
+            */
         }
 
         unsafe static void Main(string[] args)
@@ -103,19 +157,19 @@ namespace Priority_Schedular
                 Console.Write("Enter priority of process " + (i + 1) + ": ");
                 p.priority= Convert.ToInt32(Console.ReadLine());
 
-                p.started = false;
+                p.started = 0;
                 pl(p);
             }
             Console.Write("\nSequence : ");
-            
-            var k = list.First;
+
+            LinkedListNode<process> k = list.First;
             d = k.Value.start_time;
 
             RQ(k.Value);
             k = k.Next;
             list.RemoveFirst();
 
-            while (queue.Count != 0)
+            while (queue.Count != 0 || list.Count != 0)
             {
                 if (k != null && k.Value.start_time == d)
                 {
@@ -123,22 +177,26 @@ namespace Priority_Schedular
                     k = k.Next;
                     list.RemoveFirst();
                 }
+                else if (queue.Count == 0) {
+                    d++;
+                }
                 else
                 {
                     Console.Write(queue.First.Value.num + " ");
                     p = queue.First.Value;
                     queue.RemoveFirst();
-                    if(p.started == false)
+                    p.started++;
+                    d++;
+                    if (p.started == p.duration)
                     {
-                        p.started = true;
-                        waiting += (d - p.start_time)/P_num;
+
+                        waiting += (d - p.duration - p.start_time) / P_num;
                     }
-                    p.duration--;
-                    if (p.duration != 0)
+                    else
                     {
                         queue.AddFirst(p);
                     }
-                    d++;
+                    
                 }
             }
             
