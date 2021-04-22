@@ -25,7 +25,7 @@ namespace Final_P_Test__21_4_
         public Color labcolor;
     };
 
-    public partial class Form1 : Form
+    public partial class CPU_Scheduler : Form
     {
         #region variables
 
@@ -51,7 +51,7 @@ namespace Final_P_Test__21_4_
         #endregion
 
 
-        public Form1()
+        public CPU_Scheduler()
         {
             InitializeComponent();
 

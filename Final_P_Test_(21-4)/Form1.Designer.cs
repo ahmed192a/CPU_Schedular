@@ -1,7 +1,7 @@
 ﻿
 namespace Final_P_Test__21_4_
 {
-    partial class Form1
+    partial class CPU_Scheduler
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,6 +29,7 @@ namespace Final_P_Test__21_4_
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CPU_Scheduler));
             this.pnumBox = new System.Windows.Forms.TextBox();
             this.typeBox = new System.Windows.Forms.ComboBox();
             this.arrivalBox = new System.Windows.Forms.TextBox();
@@ -244,7 +245,7 @@ namespace Final_P_Test__21_4_
             this.waintingBox.TabIndex = 0;
             this.waintingBox.TextChanged += new System.EventHandler(this.pnumBox_TextChanged);
             // 
-            // Form1
+            // CPU_Scheduler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,8 +269,9 @@ namespace Final_P_Test__21_4_
             this.Controls.Add(this.arrivalBox);
             this.Controls.Add(this.waintingBox);
             this.Controls.Add(this.pnumBox);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "CPU_Scheduler";
+            this.Text = "CPU Scheduler";
             this.ResumeLayout(false);
             this.PerformLayout();
 

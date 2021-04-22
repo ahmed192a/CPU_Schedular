@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ah132\\source\\repos\\Final_P_Test_(21-4)\\Final_P_Test_(21-4).csproj": {}
+    "F:\\study\\3rd computer\\second term\\OS\\Assignments\\Assignment3-Gui\\CPU_Schedular\\Final_P_Test_(21-4)\\Final_P_Test_(21-4).csproj": {}
   },
   "projects": {
-    "C:\\Users\\ah132\\source\\repos\\Final_P_Test_(21-4)\\Final_P_Test_(21-4).csproj": {
+    "F:\\study\\3rd computer\\second term\\OS\\Assignments\\Assignment3-Gui\\CPU_Schedular\\Final_P_Test_(21-4)\\Final_P_Test_(21-4).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ah132\\source\\repos\\Final_P_Test_(21-4)\\Final_P_Test_(21-4).csproj",
+        "projectUniqueName": "F:\\study\\3rd computer\\second term\\OS\\Assignments\\Assignment3-Gui\\CPU_Schedular\\Final_P_Test_(21-4)\\Final_P_Test_(21-4).csproj",
         "projectName": "Final_P_Test_(21-4)",
-        "projectPath": "C:\\Users\\ah132\\source\\repos\\Final_P_Test_(21-4)\\Final_P_Test_(21-4).csproj",
+        "projectPath": "F:\\study\\3rd computer\\second term\\OS\\Assignments\\Assignment3-Gui\\CPU_Schedular\\Final_P_Test_(21-4)\\Final_P_Test_(21-4).csproj",
         "packagesPath": "C:\\Users\\ah132\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ah132\\source\\repos\\Final_P_Test_(21-4)\\obj\\",
+        "outputPath": "F:\\study\\3rd computer\\second term\\OS\\Assignments\\Assignment3-Gui\\CPU_Schedular\\Final_P_Test_(21-4)\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

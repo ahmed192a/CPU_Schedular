@@ -1,0 +1,5 @@
+F:\study\3rd computer\second term\Control\Assignments\Final_P_Test_(21-4).exe
+F:\study\3rd computer\second term\Control\Assignments\Final_P_Test_(21-4).dll
+F:\study\3rd computer\second term\Control\Assignments\Final_P_Test_(21-4).deps.json
+F:\study\3rd computer\second term\Control\Assignments\Final_P_Test_(21-4).runtimeconfig.json
+F:\study\3rd computer\second term\Control\Assignments\Final_P_Test_(21-4).pdb
