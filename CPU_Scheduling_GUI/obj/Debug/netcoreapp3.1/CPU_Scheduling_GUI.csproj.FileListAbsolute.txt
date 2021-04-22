@@ -1,0 +1,15 @@
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\bin\Debug\netcoreapp3.1\CPU_Scheduling_GUI.exe
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\bin\Debug\netcoreapp3.1\CPU_Scheduling_GUI.deps.json
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\bin\Debug\netcoreapp3.1\CPU_Scheduling_GUI.runtimeconfig.json
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\bin\Debug\netcoreapp3.1\CPU_Scheduling_GUI.runtimeconfig.dev.json
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\bin\Debug\netcoreapp3.1\CPU_Scheduling_GUI.dll
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\bin\Debug\netcoreapp3.1\CPU_Scheduling_GUI.pdb
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\obj\Debug\netcoreapp3.1\CPU_Scheduling_GUI.csprojAssemblyReference.cache
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\obj\Debug\netcoreapp3.1\CPU_Scheduling_GUI.AssemblyInfoInputs.cache
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\obj\Debug\netcoreapp3.1\CPU_Scheduling_GUI.AssemblyInfo.cs
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\obj\Debug\netcoreapp3.1\CPU_Scheduling_GUI.csproj.CoreCompileInputs.cache
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\obj\Debug\netcoreapp3.1\CPU_Scheduling_GUI.dll
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\obj\Debug\netcoreapp3.1\CPU_Scheduling_GUI.pdb
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\obj\Debug\netcoreapp3.1\CPU_Scheduling_GUI.genruntimeconfig.cache
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\obj\Debug\netcoreapp3.1\CPU_Scheduling_GUI.Form1.resources
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\CPU_Scheduling_GUI\obj\Debug\netcoreapp3.1\CPU_Scheduling_GUI.csproj.GenerateResource.cache

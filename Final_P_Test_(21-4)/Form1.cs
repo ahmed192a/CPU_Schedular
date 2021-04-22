@@ -51,117 +51,27 @@ namespace Final_P_Test__21_4_
         #endregion
 
 
-        public CPU_Scheduler()
-        {
-            InitializeComponent();
-
-        }
-
-        #region Get Data
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Clear_All();
-            process_type = typeBox.Text;
-            preemptive = false;
-
-            priorityBox.Visible = false;
-            priorityLabel.Visible = false;
-
-            quantemBox.Visible = false;
-            quantemLabel.Visible = false;
-
-            if(process_type == "None")
-            {
-                pnumBox.Visible = false;
-                pnumLabel.Visible = false;
-
-                arrivalBox.Visible = false;
-                arrivalLabel.Visible = false;
-
-                burstBox.Visible = false;
-                burstLabel.Visible = false;
-
-                flowLayoutPanel1.Visible = false;
-                flowLayoutPanel2.Visible = false;
-
-                Enterbutton.Enabled = false;
-                Clearbutton.Enabled = false;
-
-            }
-            else
-            {
-                pnumBox.Visible = true;
-                pnumLabel.Visible = true;
-
-                arrivalBox.Visible = true;
-                arrivalLabel.Visible = true;
-
-                burstBox.Visible = true;
-                burstLabel.Visible = true;
-
-                flowLayoutPanel1.Visible = true;
-                flowLayoutPanel2.Visible = true;
-
-                Enterbutton.Enabled = true;
-                Clearbutton.Enabled = true;
-            }
-            switch (process_type)
-            {
-                case "FCFS":
-                    break;
-                case "SJF (Preemptive)":
-                    preemptive = true;
-                    break;
-                case "SJF (Non Preemptive)":
-                    break;
-                case "Priority (Preemptive)":
-                    preemptive = true;
-                    priorityBox.Visible = true;
-                    priorityLabel.Visible = true;
-                    break;
-                case "Priority (Non Preemptive)":
-                    priorityBox.Visible = true;
-                    priorityLabel.Visible = true;
-                    break;
-                case "Round Robin":
-                    quantemBox.Visible = true;
-                    quantemLabel.Visible = true;
-                    break;
-            }
-        }
-
-        private void pnumBox_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                number_processes = int.Parse(pnumBox.Text);
-            }
-            catch (Exception error)
-            {
-                Console.WriteLine(error);
-                number_processes = 0;
-            }
-            burstTime = new int[number_processes];
-
-
-        }
-
-        #endregion
-
-
         #region CPU Schedule Logic Part
 
         // FCFS
         static void FCFS()
         {
-            int start = processes[0].arrivalTime;
             int total = 0;
-
+            int c = 0;
+            if (processes[0].arrivalTime > 0)
+            {
+                total += processes[0].arrivalTime;
+            }
             foreach (process i in processes)
             {
+                
                 total += i.burstTime;
-
-                Arrange(i, start, total);
+                if (c != 0 && i.arrivalTime > output[c - 1].completionTime)
+                {
+                    total += i.arrivalTime - output[c - 1].completionTime;
+                }
+                arrange(i, total);
+                c++;
             }
             processes.Clear();
             foreach (process k in output)
@@ -170,12 +80,12 @@ namespace Final_P_Test__21_4_
             }
         }
 
-        static void Arrange(process task, int start, int total)
+        static void arrange(process task, int total)
         {
-            task.completionTime = total - start;
+            task.on_time = task.burstTime;
+            task.completionTime = total - 0;
             task.turnArroundTime = task.completionTime - task.arrivalTime;
             task.waitingTime = task.turnArroundTime - task.burstTime;
-            task.on_time = task.burstTime;
             output.Add(task);
         }
 
@@ -220,7 +130,7 @@ namespace Final_P_Test__21_4_
                         k = processes[0];
                     }
                 }
-                else if(queue.Count == 0)
+                else if (queue.Count == 0)
                 {
                     d++;
                 }
@@ -268,21 +178,21 @@ namespace Final_P_Test__21_4_
                 }
                 else if (queue.Count == 1)
                 {
-                    if ((preemptive || queue.First.Value.started == 0) && p.burstTime < queue.First.Value.burstTime)
+                    if ((preemptive || queue.First.Value.started == 0) && p.burstTime < (queue.First.Value.burstTime - queue.First.Value.started))
                     {
                         queue.AddFirst(p);
                     }
                     else
                         queue.AddLast(p);
                 }
-                else if (p.burstTime > queue.Last.Value.burstTime)
+                else if (p.burstTime >= (queue.Last.Value.burstTime - queue.Last.Value.started))
                 {
                     queue.AddLast(p);
                 }
                 else
                 {
                     LinkedListNode<process> i = preemptive ? queue.First : queue.First.Next;
-                    while (i.Value.burstTime <= p.burstTime)
+                    while ((i.Value.burstTime- i.Value.started)  <= p.burstTime)
                     {
                         i = i.Next;
                     }
@@ -396,7 +306,7 @@ namespace Final_P_Test__21_4_
                         //list.RemoveFirst();
                     }
                 }
-                else if(queue.Count == 0)
+                else if (queue.Count == 0)
                 {
                     d++;
                 }
@@ -410,7 +320,7 @@ namespace Final_P_Test__21_4_
                     else
                     {
                         m.on_time = m.burstTime;
-                    }                   
+                    }
                     output.Add(m);
                     /*
                     if (output.Count != 0 && output[output.Count - 1].pID == queue.First.Value.pID)
@@ -458,6 +368,14 @@ namespace Final_P_Test__21_4_
 
         #endregion
 
+
+
+        public CPU_Scheduler()
+        {
+            InitializeComponent();
+        }
+
+
         private void Clear_All()
         {
             averageWaitingTime = 0;
@@ -479,11 +397,6 @@ namespace Final_P_Test__21_4_
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Clear_All();
-        }
-        
         private void Clear_Data()
         {
             averageWaitingTime = 0;
@@ -497,6 +410,8 @@ namespace Final_P_Test__21_4_
             output.Clear();
             flowLayoutPanel1.Controls.Clear();
             flowLayoutPanel2.Controls.Clear();
+
+
 
         }
 
@@ -546,7 +461,62 @@ namespace Final_P_Test__21_4_
             flowLayoutPanel2.Controls.Add(lab2);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SupportListProcess()
+        {
+            arrival_time_int = Array.ConvertAll(arrivalBox.Text.Split(' '), int.Parse);
+            duration_int = Array.ConvertAll(burstBox.Text.Split(' '), int.Parse);
+            if (process_type == "Priority (Preemptive)" || process_type == "Priority (Non Preemptive)")
+            {
+                priority_int = Array.ConvertAll(priorityBox.Text.Split(' '), int.Parse);
+
+            }
+            else if (process_type == "Round Robin")
+            {
+                quantumTime = int.Parse(quantemBox.Text);
+            }
+
+
+            process processi = new process();
+            for (int i = 0; i < number_processes; i++)
+            {
+                processi.pID = i + 1;
+                processi.arrivalTime = arrival_time_int[i];
+                processi.started = 0;
+                processi.on_time = 1;
+                processi.end = 0;
+                processi.burstTime = duration_int[i];
+                processi.labcolor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+                if (process_type == "Priority (Preemptive)" || process_type == "Priority (Non Preemptive)")
+                {
+                    processi.priority = priority_int[i];
+
+                }
+                burstTime[i] = duration_int[i];
+
+                processes.Add(processi);
+                //Console.WriteLine(processi.arrivalTime);
+            }
+            // quantumTime = quantum;
+            processes.Sort((x, y) => x.arrivalTime - y.arrivalTime);
+        }
+
+
+        // Handler 
+        private void pnumBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                number_processes = int.Parse(pnumBox.Text);
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine(error);
+                number_processes = 0;
+            }
+            burstTime = new int[number_processes];
+        }
+
+        private void Enterbutton_Click(object sender, EventArgs e)
         {
             Clear_Data();
             SupportListProcess(); // insert the data to processes list
@@ -563,52 +533,88 @@ namespace Final_P_Test__21_4_
                     priority_sjf();
                     break;
                 case "Round Robin":
-                    Round_R();             
+                    Round_R();
                     break;
             }
             OUT_Data();
-
         }
 
-        private void SupportListProcess()
+        private void Clearbutton_Click(object sender, EventArgs e)
         {
-            arrival_time_int = Array.ConvertAll(arrivalBox.Text.Split(' '), int.Parse);
-            duration_int = Array.ConvertAll(burstBox.Text.Split(' '), int.Parse);
-            if (process_type == "Priority (Preemptive)" || process_type == "Priority (Non Preemptive)")
-            {
-                priority_int = Array.ConvertAll(priorityBox.Text.Split(' '), int.Parse);
-
-            }
-            else if(process_type == "Round Robin")
-            {
-                quantumTime = int.Parse(quantemBox.Text);
-            }
-            
-
-            process processi = new process();
-            for (int i = 0; i < number_processes; i++)
-            {
-                processi.pID = i + 1;
-                processi.arrivalTime = arrival_time_int[i];
-                processi.started = 0;
-                processi.on_time = 1;
-                processi.end = 0;
-                processi.burstTime = duration_int[i];
-                processi.labcolor = Color.FromArgb(rnd.Next(256) , rnd.Next(256), rnd.Next(256));
-                if (process_type == "Priority (Preemptive)" || process_type == "Priority (Non Preemptive)")
-                {
-                    processi.priority = priority_int[i];
-
-                }
-                burstTime[i] = duration_int[i];
-
-                processes.Add(processi);
-                //Console.WriteLine(processi.arrivalTime);
-            }
-            // quantumTime = quantum;
-            processes.Sort((x, y) => x.arrivalTime - y.arrivalTime);
+            Clear_All();
         }
 
+        private void typeBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Clear_All();
+            process_type = typeBox.Text;
+            preemptive = false;
+
+            priorityBox.Visible = false;
+            priorityLabel.Visible = false;
+
+            quantemBox.Visible = false;
+            quantemLabel.Visible = false;
+
+            if (process_type == "None")
+            {
+                pnumBox.Visible = false;
+                pnumLabel.Visible = false;
+
+                arrivalBox.Visible = false;
+                arrivalLabel.Visible = false;
+
+                burstBox.Visible = false;
+                burstLabel.Visible = false;
+
+                flowLayoutPanel1.Visible = false;
+                flowLayoutPanel2.Visible = false;
+
+                Enterbutton.Enabled = false;
+                Clearbutton.Enabled = false;
+
+            }
+            else
+            {
+                pnumBox.Visible = true;
+                pnumLabel.Visible = true;
+
+                arrivalBox.Visible = true;
+                arrivalLabel.Visible = true;
+
+                burstBox.Visible = true;
+                burstLabel.Visible = true;
+
+                flowLayoutPanel1.Visible = true;
+                flowLayoutPanel2.Visible = true;
+
+                Enterbutton.Enabled = true;
+                Clearbutton.Enabled = true;
+            }
+            switch (process_type)
+            {
+                case "FCFS":
+                    break;
+                case "SJF (Preemptive)":
+                    preemptive = true;
+                    break;
+                case "SJF (Non Preemptive)":
+                    break;
+                case "Priority (Preemptive)":
+                    preemptive = true;
+                    priorityBox.Visible = true;
+                    priorityLabel.Visible = true;
+                    break;
+                case "Priority (Non Preemptive)":
+                    priorityBox.Visible = true;
+                    priorityLabel.Visible = true;
+                    break;
+                case "Round Robin":
+                    quantemBox.Visible = true;
+                    quantemLabel.Visible = true;
+                    break;
+            }
+        }
 
     }
 }

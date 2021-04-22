@@ -4,12 +4,12 @@ namespace Final_P_Test__21_4_
     partial class CPU_Scheduler
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -24,8 +24,8 @@ namespace Final_P_Test__21_4_
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -52,9 +52,10 @@ namespace Final_P_Test__21_4_
             // 
             // pnumBox
             // 
-            this.pnumBox.Location = new System.Drawing.Point(237, 83);
+            this.pnumBox.Location = new System.Drawing.Point(275, 67);
+            this.pnumBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnumBox.Name = "pnumBox";
-            this.pnumBox.Size = new System.Drawing.Size(119, 27);
+            this.pnumBox.Size = new System.Drawing.Size(119, 22);
             this.pnumBox.TabIndex = 0;
             this.pnumBox.Visible = false;
             this.pnumBox.TextChanged += new System.EventHandler(this.pnumBox_TextChanged);
@@ -70,50 +71,55 @@ namespace Final_P_Test__21_4_
             "Priority (Preemptive)",
             "Priority (Non Preemptive)",
             "Round Robin"});
-            this.typeBox.Location = new System.Drawing.Point(218, 26);
+            this.typeBox.Location = new System.Drawing.Point(218, 21);
+            this.typeBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.typeBox.Name = "typeBox";
-            this.typeBox.Size = new System.Drawing.Size(154, 28);
+            this.typeBox.Size = new System.Drawing.Size(154, 24);
             this.typeBox.TabIndex = 1;
             this.typeBox.Text = "None";
-            this.typeBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.typeBox.SelectedIndexChanged += new System.EventHandler(this.typeBox_SelectedIndexChanged);
             // 
             // arrivalBox
             // 
-            this.arrivalBox.Location = new System.Drawing.Point(237, 127);
+            this.arrivalBox.Location = new System.Drawing.Point(275, 103);
+            this.arrivalBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.arrivalBox.Name = "arrivalBox";
-            this.arrivalBox.Size = new System.Drawing.Size(119, 27);
+            this.arrivalBox.Size = new System.Drawing.Size(119, 22);
             this.arrivalBox.TabIndex = 0;
             this.arrivalBox.Visible = false;
             // 
             // burstBox
             // 
-            this.burstBox.Location = new System.Drawing.Point(237, 170);
+            this.burstBox.Location = new System.Drawing.Point(275, 137);
+            this.burstBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.burstBox.Name = "burstBox";
-            this.burstBox.Size = new System.Drawing.Size(119, 27);
+            this.burstBox.Size = new System.Drawing.Size(119, 22);
             this.burstBox.TabIndex = 0;
             this.burstBox.Visible = false;
             // 
             // priorityBox
             // 
-            this.priorityBox.Location = new System.Drawing.Point(237, 213);
+            this.priorityBox.Location = new System.Drawing.Point(275, 171);
+            this.priorityBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.priorityBox.Name = "priorityBox";
-            this.priorityBox.Size = new System.Drawing.Size(119, 27);
+            this.priorityBox.Size = new System.Drawing.Size(119, 22);
             this.priorityBox.TabIndex = 0;
             this.priorityBox.Visible = false;
             // 
             // quantemBox
             // 
-            this.quantemBox.Location = new System.Drawing.Point(237, 213);
+            this.quantemBox.Location = new System.Drawing.Point(275, 171);
+            this.quantemBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.quantemBox.Name = "quantemBox";
-            this.quantemBox.Size = new System.Drawing.Size(119, 27);
+            this.quantemBox.Size = new System.Drawing.Size(119, 22);
             this.quantemBox.TabIndex = 0;
             this.quantemBox.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(40, 29);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label1.Location = new System.Drawing.Point(40, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 25);
             this.label1.TabIndex = 2;
@@ -123,8 +129,8 @@ namespace Final_P_Test__21_4_
             // pnumLabel
             // 
             this.pnumLabel.AutoSize = true;
-            this.pnumLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pnumLabel.Location = new System.Drawing.Point(40, 85);
+            this.pnumLabel.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.pnumLabel.Location = new System.Drawing.Point(40, 68);
             this.pnumLabel.Name = "pnumLabel";
             this.pnumLabel.Size = new System.Drawing.Size(190, 25);
             this.pnumLabel.TabIndex = 2;
@@ -135,8 +141,8 @@ namespace Final_P_Test__21_4_
             // arrivalLabel
             // 
             this.arrivalLabel.AutoSize = true;
-            this.arrivalLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.arrivalLabel.Location = new System.Drawing.Point(40, 129);
+            this.arrivalLabel.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.arrivalLabel.Location = new System.Drawing.Point(40, 103);
             this.arrivalLabel.Name = "arrivalLabel";
             this.arrivalLabel.Size = new System.Drawing.Size(113, 25);
             this.arrivalLabel.TabIndex = 2;
@@ -147,8 +153,8 @@ namespace Final_P_Test__21_4_
             // burstLabel
             // 
             this.burstLabel.AutoSize = true;
-            this.burstLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.burstLabel.Location = new System.Drawing.Point(40, 172);
+            this.burstLabel.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.burstLabel.Location = new System.Drawing.Point(40, 138);
             this.burstLabel.Name = "burstLabel";
             this.burstLabel.Size = new System.Drawing.Size(101, 25);
             this.burstLabel.TabIndex = 2;
@@ -159,8 +165,8 @@ namespace Final_P_Test__21_4_
             // priorityLabel
             // 
             this.priorityLabel.AutoSize = true;
-            this.priorityLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.priorityLabel.Location = new System.Drawing.Point(40, 215);
+            this.priorityLabel.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.priorityLabel.Location = new System.Drawing.Point(40, 172);
             this.priorityLabel.Name = "priorityLabel";
             this.priorityLabel.Size = new System.Drawing.Size(73, 25);
             this.priorityLabel.TabIndex = 2;
@@ -171,8 +177,8 @@ namespace Final_P_Test__21_4_
             // quantemLabel
             // 
             this.quantemLabel.AutoSize = true;
-            this.quantemLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.quantemLabel.Location = new System.Drawing.Point(40, 215);
+            this.quantemLabel.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.quantemLabel.Location = new System.Drawing.Point(40, 172);
             this.quantemLabel.Name = "quantemLabel";
             this.quantemLabel.Size = new System.Drawing.Size(90, 25);
             this.quantemLabel.TabIndex = 2;
@@ -184,8 +190,8 @@ namespace Final_P_Test__21_4_
             // 
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Black;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(50, 322);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(50, 258);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(0, 0);
             this.flowLayoutPanel1.TabIndex = 3;
@@ -195,41 +201,43 @@ namespace Final_P_Test__21_4_
             // 
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.ForeColor = System.Drawing.Color.Black;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(50, 352);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(45, 290);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(300, 20);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(300, 16);
             this.flowLayoutPanel2.TabIndex = 3;
             this.flowLayoutPanel2.Visible = false;
             // 
             // Enterbutton
             // 
             this.Enterbutton.Enabled = false;
-            this.Enterbutton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Enterbutton.Location = new System.Drawing.Point(439, 101);
+            this.Enterbutton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.Enterbutton.Location = new System.Drawing.Point(439, 81);
+            this.Enterbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Enterbutton.Name = "Enterbutton";
-            this.Enterbutton.Size = new System.Drawing.Size(100, 39);
+            this.Enterbutton.Size = new System.Drawing.Size(100, 31);
             this.Enterbutton.TabIndex = 4;
             this.Enterbutton.Text = "Enter";
             this.Enterbutton.UseVisualStyleBackColor = true;
-            this.Enterbutton.Click += new System.EventHandler(this.button1_Click);
+            this.Enterbutton.Click += new System.EventHandler(this.Enterbutton_Click);
             // 
             // Clearbutton
             // 
             this.Clearbutton.Enabled = false;
-            this.Clearbutton.Location = new System.Drawing.Point(572, 101);
+            this.Clearbutton.Location = new System.Drawing.Point(572, 81);
+            this.Clearbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Clearbutton.Name = "Clearbutton";
-            this.Clearbutton.Size = new System.Drawing.Size(100, 39);
+            this.Clearbutton.Size = new System.Drawing.Size(100, 31);
             this.Clearbutton.TabIndex = 4;
             this.Clearbutton.Text = "Clear";
             this.Clearbutton.UseVisualStyleBackColor = true;
-            this.Clearbutton.Click += new System.EventHandler(this.button2_Click);
+            this.Clearbutton.Click += new System.EventHandler(this.Clearbutton_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(423, 27);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label5.Location = new System.Drawing.Point(423, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(156, 25);
             this.label5.TabIndex = 2;
@@ -238,19 +246,19 @@ namespace Final_P_Test__21_4_
             // 
             // waintingBox
             // 
-            this.waintingBox.Location = new System.Drawing.Point(621, 25);
+            this.waintingBox.Location = new System.Drawing.Point(621, 20);
+            this.waintingBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.waintingBox.Name = "waintingBox";
             this.waintingBox.ReadOnly = true;
-            this.waintingBox.Size = new System.Drawing.Size(119, 27);
+            this.waintingBox.Size = new System.Drawing.Size(119, 22);
             this.waintingBox.TabIndex = 0;
-            this.waintingBox.TextChanged += new System.EventHandler(this.pnumBox_TextChanged);
             // 
             // CPU_Scheduler
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(802, 458);
+            this.ClientSize = new System.Drawing.Size(802, 366);
             this.Controls.Add(this.Clearbutton);
             this.Controls.Add(this.Enterbutton);
             this.Controls.Add(this.flowLayoutPanel2);
@@ -270,12 +278,14 @@ namespace Final_P_Test__21_4_
             this.Controls.Add(this.waintingBox);
             this.Controls.Add(this.pnumBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CPU_Scheduler";
             this.Text = "CPU Scheduler";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
 
         #endregion
 

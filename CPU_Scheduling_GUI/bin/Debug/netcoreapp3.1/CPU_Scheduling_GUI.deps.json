@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "CPU_Scheduling_GUI/1.0.0": {
+        "runtime": {
+          "CPU_Scheduling_GUI.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CPU_Scheduling_GUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
