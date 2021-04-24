@@ -271,9 +271,28 @@ namespace Final_P_Test__21_4_
             bool detectProcessRemoval = false;
 
             bool smallerProcess = false;
+            float FirstProcessArrivalTime = k.arrivalTime;
+
             while (queue.Count != 0 || processes.Count != 0)
             {
-                if ((k.end != 1 && k.arrivalTime <= d) && d != 0)
+                if (k.end != 1 && queue.Count == 0)
+                {
+                    float TempVar = k.arrivalTime - d;
+                    d += TempVar;
+                    queue.AddFirst(k);
+                    FirstProcessArrivalTime = k.arrivalTime;
+
+                    processes.RemoveAt(0); // remove that process from the sorted list
+                    if (processes.Count == 0) // if the list is empty 
+                    {
+                        k.end = 1; // put 1 in that "detector variable"
+                    }
+                    else
+                    {
+                        k = processes[0]; // k -> list.next
+                    }
+                }
+                if ((k.end != 1 && k.arrivalTime <= d) && d != FirstProcessArrivalTime)
                 {
                     if (detectProcessRemoval)
                     {
