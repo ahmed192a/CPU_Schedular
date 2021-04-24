@@ -182,7 +182,7 @@ namespace Final_P_Test__21_4_
             this.quantemLabel.Name = "quantemLabel";
             this.quantemLabel.Size = new System.Drawing.Size(90, 25);
             this.quantemLabel.TabIndex = 2;
-            this.quantemLabel.Text = "Quantem";
+            this.quantemLabel.Text = "Quantum";
             this.quantemLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.quantemLabel.Visible = false;
             // 
@@ -277,7 +277,7 @@ namespace Final_P_Test__21_4_
             this.Controls.Add(this.arrivalBox);
             this.Controls.Add(this.waintingBox);
             this.Controls.Add(this.pnumBox);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CPU_Scheduler";
             this.Text = "CPU Scheduler";

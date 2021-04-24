@@ -8,3 +8,13 @@ F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\Final_P_Test_(2
 F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\Final_P_Test_(21-4)\obj\Release\Final_P_Test_(21-4).exe
 F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\Final_P_Test_(21-4)\obj\Release\Final_P_Test_(21-4).pdb
 F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\Final_P_Test_(21-4)\obj\Release\Final_P_Test_(21-4).csprojAssemblyReference.cache
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Final_P_Test_(21-4)\bin\Release\Final_P_Test_(21-4).exe.config
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Final_P_Test_(21-4)\bin\Release\Final_P_Test_(21-4).exe
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Final_P_Test_(21-4)\bin\Release\Final_P_Test_(21-4).pdb
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Final_P_Test_(21-4)\obj\Release\Final_P_Test_(21-4).csprojAssemblyReference.cache
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Final_P_Test_(21-4)\obj\Release\Final_P_Test__21_4_.Properties.Resources.resources
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Final_P_Test_(21-4)\obj\Release\Final_P_Test_(21-4).csproj.GenerateResource.cache
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Final_P_Test_(21-4)\obj\Release\Final_P_Test_(21-4).csproj.CoreCompileInputs.cache
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Final_P_Test_(21-4)\obj\Release\Final_P_Test_(21-4).exe
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Final_P_Test_(21-4)\obj\Release\Final_P_Test_(21-4).pdb
+F:\study\3rd computer\second term\OS\Assignments\Assignment3-Gui\CPU_Schedular\Final_P_Test_(21-4)\obj\Release\Final_P_Test__21_4_.CPU_Scheduler.resources

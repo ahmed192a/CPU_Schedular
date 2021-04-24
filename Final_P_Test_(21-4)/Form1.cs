@@ -14,16 +14,17 @@ namespace Final_P_Test__21_4_
     {
         public int pID;
         public int priority;           // the priority of the process
-        public int arrivalTime;     // the start time of the process
-        public int burstTime;       // time for the process to finish
-        public int completionTime;
-        public int turnArroundTime;
-        public int waitingTime;
-        public int started;
+        public float arrivalTime;     // the start time of the process
+        public float burstTime;       // time for the process to finish
+        public float completionTime;
+        public float turnArroundTime;
+        public float waitingTime;
+        public float started;
         public int end;
-        public int on_time;
+        public float on_time;
         public Color labcolor;
     };
+
 
     public partial class CPU_Scheduler : Form
     {
@@ -38,14 +39,14 @@ namespace Final_P_Test__21_4_
         static List<process> queue_fcfs = new List<process>();
 
         static int number_processes;	// number of process entered by the user
-        static int[] burstTime;
+        static float[] burstTime;
         static int quantumTime;
         static string process_type;
         static bool preemptive = false;
         static float averageWaitingTime = 0;
 
-        int[] arrival_time_int;
-        int[] duration_int = { 0 };
+        float[] arrival_time_int;
+        float[] duration_int = { 0 };
         int[] priority_int = { 0 };
         static Random rnd = new Random();
         #endregion
@@ -56,7 +57,7 @@ namespace Final_P_Test__21_4_
         // FCFS
         static void FCFS()
         {
-            int total = 0;
+            float total = 0;
             int c = 0;
             if (processes[0].arrivalTime > 0)
             {
@@ -80,7 +81,7 @@ namespace Final_P_Test__21_4_
             }
         }
 
-        static void arrange(process task, int total)
+        static void arrange(process task, float total)
         {
             task.on_time = task.burstTime;
             task.completionTime = total - 0;
@@ -93,9 +94,7 @@ namespace Final_P_Test__21_4_
         static void priority_sjf()
         {
             process p = new process();
-            int d;      // detect the current timing of the process
-
-
+            float d;      // detect the current timing of the process
 
             // var k = list.First;
             var k = processes[0];
@@ -132,17 +131,33 @@ namespace Final_P_Test__21_4_
                 }
                 else if (queue.Count == 0)
                 {
-                    d++;
+                    d = k.arrivalTime;
                 }
 
                 else
                 {
                     //Console.Write(queue.First.Value.pID + " ");
                     p = queue.First.Value;
-
+                    
                     queue.RemoveFirst();
-                    p.started++;
-                    d++;
+                    //p.started++;
+                    //d++;
+                    
+                    //d = k.arrivalTime;
+                    if(k.end !=1 &&(k.arrivalTime - d) < (p.burstTime - p.started))
+                    {
+                        p.started += (k.arrivalTime - d);
+                        p.on_time = (k.arrivalTime - d);
+                        d = k.arrivalTime;
+                    }
+                    else
+                    {
+                        float ll = p.burstTime - p.started;
+                        p.started += ll;
+                        p.on_time = ll;
+                        d += ll;
+                    }
+                    
                     if (p.started == p.burstTime)
                     {
                         turnAroundTime = (d - p.arrivalTime);
@@ -156,7 +171,7 @@ namespace Final_P_Test__21_4_
                     if (output.Count != 0 && output[output.Count - 1].pID == p.pID)
                     {
                         process m = output[output.Count - 1];
-                        m.on_time++;
+                        m.on_time+= p.on_time;
                         output.RemoveAt(output.Count - 1);
                         output.Add(m);
                     }
@@ -235,7 +250,7 @@ namespace Final_P_Test__21_4_
         static void Round_R()
         {
             process p = new process();
-            int d;		// detect the current timing of the process
+            float d;		// detect the current timing of the process
             //float averageWaitingTime = 0;
 
             var k = processes[0];
@@ -419,52 +434,55 @@ namespace Final_P_Test__21_4_
         {
             waintingBox.Text = averageWaitingTime.ToString();
 
-            int time = 0, i;
+            float time = 0;
+            int i;
 
             for (i = 0; i < output.Count; i++)
             {
-                if (i != 0 && output[i].arrivalTime > (time + output[i - 1].on_time))
+                time = i == 0 ? output[i].arrivalTime : time + output[i - 1].on_time;
+                if (i != 0 && output[i].arrivalTime > time)
                 {
                     Label empty = new Label();
                     empty.BackColor = Color.White;
                     empty.Text = "NOP";
                     empty.Font = new Font("Arial", 10, FontStyle.Bold);
-                    empty.Width = 40 + 10 * (output[i].arrivalTime - (time + output[i - 1].on_time));
+                    empty.Width = 40 + 10 * (int)(output[i].arrivalTime - (time + output[i - 1].on_time));
                     flowLayoutPanel1.Controls.Add(empty);
 
-                    time = time + output[i - 1].on_time;
+                    
                     Label empty1 = new Label();
                     empty1.Text = time.ToString();
                     empty1.Font = new Font("Arial", 10, FontStyle.Bold);
-                    empty1.Width = 40 + 10 * (output[i].arrivalTime - time);
+                    empty1.Width = 40 + 10 * (int)(output[i].arrivalTime - time);
                     flowLayoutPanel2.Controls.Add(empty1);
+                    time = output[i].arrivalTime;
                 }
                 Label lab = new Label();
                 lab.BackColor = output[i].labcolor;
                 lab.Text = "P" + output[i].pID.ToString();
                 lab.Font = new Font("Arial", 10, FontStyle.Bold);
-                lab.Width = 40 + 10 * output[i].on_time;
+                lab.Width = 40 + 10 * (int)output[i].on_time;
                 flowLayoutPanel1.Controls.Add(lab);
 
-                time = i == 0 ? output[i].arrivalTime : time + output[i - 1].on_time;
+                
                 Label lab1 = new Label();
                 lab1.Text = time.ToString();
                 lab1.Font = new Font("Arial", 10, FontStyle.Bold);
-                lab1.Width = 40 + 10 * output[i].on_time;
+                lab1.Width = 40 + 10 * (int)output[i].on_time;
                 flowLayoutPanel2.Controls.Add(lab1);
             }
             Label lab2 = new Label();
             time += output[i - 1].on_time;
             lab2.Text = time.ToString();
             lab2.Font = new Font("Arial", 10, FontStyle.Bold);
-            lab2.Width = 30;
+            lab2.Width = 40;
             flowLayoutPanel2.Controls.Add(lab2);
         }
 
         private void SupportListProcess()
         {
-            arrival_time_int = Array.ConvertAll(arrivalBox.Text.Split(' '), int.Parse);
-            duration_int = Array.ConvertAll(burstBox.Text.Split(' '), int.Parse);
+            arrival_time_int = Array.ConvertAll(arrivalBox.Text.Split(' '), float.Parse);
+            duration_int = Array.ConvertAll(burstBox.Text.Split(' '), float.Parse);
             if (process_type == "Priority (Preemptive)" || process_type == "Priority (Non Preemptive)")
             {
                 priority_int = Array.ConvertAll(priorityBox.Text.Split(' '), int.Parse);
@@ -497,7 +515,7 @@ namespace Final_P_Test__21_4_
                 //Console.WriteLine(processi.arrivalTime);
             }
             // quantumTime = quantum;
-            processes.Sort((x, y) => x.arrivalTime - y.arrivalTime);
+            processes.Sort((x, y) => (x.arrivalTime.CompareTo(y.arrivalTime)));
         }
 
 
@@ -513,7 +531,7 @@ namespace Final_P_Test__21_4_
                 Console.WriteLine(error);
                 number_processes = 0;
             }
-            burstTime = new int[number_processes];
+            burstTime = new float[number_processes];
         }
 
         private void Enterbutton_Click(object sender, EventArgs e)
